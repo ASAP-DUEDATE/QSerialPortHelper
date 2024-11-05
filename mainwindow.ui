@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>727</width>
+    <height>624</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(245, 245, 245);
+font: 9pt &quot;Sans Serif Collection&quot;;
+border: 1px solid #D3D3D3;
+border-radius: 8px; 
+color: #000000;
+QScrollBar {
+    background-color: transparent;
+    width: 10px;  // 较窄的滚动条宽度
+}
+QScrollBar::handle {
+    background-color: #A9A9A9;  // 滚动条的颜色 (浅灰色)
+    border-radius: 5px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>351</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 8px; /* 圆角边框 */
+    padding: 8px; /* 内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+}
+
+QWidget:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>321</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_25">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>发送串口选择:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_ChoseSendPort">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>321</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_7">
+      <item row="2" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseSendDataBits">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_28">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>数据位:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseSendStopBits">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_27">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>停止位:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_26">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>波特率:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseSendBaudRate">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseSendParityBits">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_29">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>校验位:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_30">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>串口操作:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_OpenSendPort">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); /* 上浅下深的渐变 */
+    color: #000000; /* 按钮的文字颜色 */
+    border: 1px solid #B0B0B0; /* 按钮的边框颜色 */
+    border-radius: 8px; /* macOS 风格的圆角按钮 */
+    padding: 5px 15px; /* 按钮的内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 默认字体 */
+    font-size: 14px; /* 字体大小 */
+    min-height: 28px
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #EDEDED, stop:1 #D8D8D8); /* 鼠标悬停时渐变 */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #B0B0B0); /* 按下时渐变 */
+    border: 1px solid #909090; /* 按下时边框颜色 */
+}
+
+QPushButton:disabled {
+    background-color: #F0F0F0; /* 禁用状态下的背景颜色 */
+    color: #A0A0A0; /* 禁用状态下的文字颜色 */
+    border: 1px solid #D0D0D0; /* 禁用状态下的边框颜色 */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>打开串口</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>10</y>
+      <width>351</width>
+      <height>361</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 8px; /* 圆角边框 */
+    padding: 8px; /* 内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+}
+
+QWidget:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}</string>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>321</width>
+       <height>80</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_31">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>接收串口选择:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="comboBox_ChoseRecPort">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="gridLayoutWidget_6">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>110</y>
+       <width>321</width>
+       <height>231</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_8">
+      <item row="2" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseRecDataBits">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_32">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>数据位:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseRecStopBits">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_33">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>停止位:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_34">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>波特率:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseRecBaudRate">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="comboBox_ChoseRecParityBits">
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 6px;
+    padding: 4px;
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    min-height: 24px;
+}
+
+QComboBox:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+QComboBox QAbstractItemView {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    selection-background-color: #007AFF;
+    selection-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 18px; /* 下拉按钮宽度 */
+    border-left: 1px solid #CCCCCC;
+}
+
+QComboBox::down-arrow {
+    image:  url(:/Pic/down_arrow.png);
+    width: 10px;
+    height: 10px;
+}
+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_35">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>校验位:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_36">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+    color: #333333; /* 深灰色字体 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+    background-color: transparent; /* 无背景 */
+    padding: 4px; /* 内边距 */
+}</string>
+        </property>
+        <property name="text">
+         <string>串口操作:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_OpenRecPort">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); /* 上浅下深的渐变 */
+    color: #000000; /* 按钮的文字颜色 */
+    border: 1px solid #B0B0B0; /* 按钮的边框颜色 */
+    border-radius: 8px; /* macOS 风格的圆角按钮 */
+    padding: 5px 15px; /* 按钮的内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 默认字体 */
+    font-size: 14px; /* 字体大小 */
+    min-height: 28px
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #EDEDED, stop:1 #D8D8D8); /* 鼠标悬停时渐变 */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #B0B0B0); /* 按下时渐变 */
+    border: 1px solid #909090; /* 按下时边框颜色 */
+}
+
+QPushButton:disabled {
+    background-color: #F0F0F0; /* 禁用状态下的背景颜色 */
+    color: #A0A0A0; /* 禁用状态下的文字颜色 */
+    border: 1px solid #D0D0D0; /* 禁用状态下的边框颜色 */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>打开串口</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_SendMessage">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>390</y>
+      <width>351</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPlainTextEdit {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 8px; /* 圆角边框 */
+    padding: 8px; /* 内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+}
+
+QPlainTextEdit:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical {
+    background-color: #E1E1E1; /* 滚动条背景颜色 */
+    width: 12px; /* 滚动条宽度 */
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #BEBEBE; /* 滚动条的手柄颜色 */
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: none; /* 去掉滚动条的上下箭头 */
+}
+
+QScrollBar:horizontal {
+    background-color: #E1E1E1;
+    height: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #BEBEBE;
+    border-radius: 6px;
+    min-width: 20px;
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit_RecMessage">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>390</y>
+      <width>351</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPlainTextEdit {
+    background-color: #F4F4F4; /* 浅灰色背景 */
+    color: #333333; /* 深灰色文本 */
+    border: 1px solid #CCCCCC; /* 浅灰色边框 */
+    border-radius: 8px; /* 圆角边框 */
+    padding: 8px; /* 内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 字体 */
+    font-size: 14px; /* 字体大小 */
+}
+
+QPlainTextEdit:focus {
+    border: 1px solid #007AFF; /* 焦点时的蓝色边框 */
+}
+
+/* 滚动条样式 */
+QScrollBar:vertical {
+    background-color: #E1E1E1; /* 滚动条背景颜色 */
+    width: 12px; /* 滚动条宽度 */
+    border-radius: 6px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #BEBEBE; /* 滚动条的手柄颜色 */
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    background: none; /* 去掉滚动条的上下箭头 */
+}
+
+QScrollBar:horizontal {
+    background-color: #E1E1E1;
+    height: 12px;
+    border-radius: 6px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #BEBEBE;
+    border-radius: 6px;
+    min-width: 20px;
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>171</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="pushButton_Send">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); /* 上浅下深的渐变 */
+    color: #000000; /* 按钮的文字颜色 */
+    border: 1px solid #B0B0B0; /* 按钮的边框颜色 */
+    border-radius: 8px; /* macOS 风格的圆角按钮 */
+    padding: 5px 15px; /* 按钮的内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 默认字体 */
+    font-size: 14px; /* 字体大小 */
+    min-height: 28px
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #EDEDED, stop:1 #D8D8D8); /* 鼠标悬停时渐变 */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #B0B0B0); /* 按下时渐变 */
+    border: 1px solid #909090; /* 按下时边框颜色 */
+}
+
+QPushButton:disabled {
+    background-color: #F0F0F0; /* 禁用状态下的背景颜色 */
+    color: #A0A0A0; /* 禁用状态下的文字颜色 */
+    border: 1px solid #D0D0D0; /* 禁用状态下的边框颜色 */
+}
+</string>
+       </property>
+       <property name="text">
+        <string>发送</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_Clean">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #F5F5F5, stop:1 #E0E0E0); /* 上浅下深的渐变 */
+    color: #000000; /* 按钮的文字颜色 */
+    border: 1px solid #B0B0B0; /* 按钮的边框颜色 */
+    border-radius: 8px; /* macOS 风格的圆角按钮 */
+    padding: 5px 15px; /* 按钮的内边距 */
+    font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; /* macOS 默认字体 */
+    font-size: 14px; /* 字体大小 */
+    min-height: 28px
+}
+
+QPushButton:hover {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #EDEDED, stop:1 #D8D8D8); /* 鼠标悬停时渐变 */
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #D0D0D0, stop:1 #B0B0B0); /* 按下时渐变 */
+    border: 1px solid #909090; /* 按下时边框颜色 */
+}
+
+QPushButton:disabled {
+    background-color: #F0F0F0; /* 禁用状态下的背景颜色 */
+    color: #A0A0A0; /* 禁用状态下的文字颜色 */
+    border: 1px solid #D0D0D0; /* 禁用状态下的边框颜色 */
+}
+</string>
+       </property>
+       <property name="text">
+        <string>清除发送</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
