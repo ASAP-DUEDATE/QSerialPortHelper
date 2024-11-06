@@ -1,26 +1,23 @@
-
 # QtSerialPortHelper
-    This is a Qt-based Serial Communication Assistant designed to simplify the process of managing serial port communication.
-    The application includes features for both sending and receiving data through a serial port, with flexible configuration options for the port's baud rate, data bits, stop bits, and parity. 
-    It supports asynchronous multi-threaded operation for handling serial port communication efficiently.
-## Features:
-    1.Send and Receive Serial Communication：Supports separate threads for sending and receiving data.
-    2.Serial Port Configuration:Allows dynamic configuration of serial port settings, including baud rate, data bits, stop bits, and parity.
-    3.Multi-threading Support:Utilizes separate threads for serial data transmission and reception to improve efficiency and responsiveness.
-    4.UI Controls: Includes a user-friendly interface with combo boxes for selecting serial port parameters, text areas for sending and receiving messages, and buttons for opening/closing serial ports.
-    6.Error Handling: Provides real-time error reporting for various serial port operations.
-    7.Clear Interface:Simple, intuitive interface to handle data input/output and easily manage multiple serial ports.
-## How It Works:
-    1.Serial Port Settings: The user can select the desired serial port and configure the port settings, such as baud rate, data bits, stop bits, and parity.
-    2.Open/Close Ports:Separate buttons allow users to open and close the sending and receiving serial ports. Once the port is opened, the appropriate thread for sending or receiving data is activated.
-    3.Sending Data: The user can type messages into the send text box and click the send button to transmit data via the serial port.
-    4.Receiving Data:The received data is automatically displayed in the receive text box, and users can monitor the communication process.
-    5.Clear Data: A button to clear the text areas for both sending and receiving messages.
-## Technologies Used:
-    Qt 5/6 for GUI and multi-threading.
-    QSerialPort for serial communication.
-    C++ for application logic and threading.
-    QMutex for thread synchronization and data protection.
-## Pic:
-![image](https://github.com/user-attachments/assets/fa2feef1-659e-4b63-b145-9ef6ecd14be2)
+这是一个基于 Qt 的串口通信助手，旨在简化串口通信管理的过程。该应用程序支持通过串口发送和接收数据，并提供灵活的串口配置选项，包括波特率、数据位、停止位和校验位。它还支持异步多线程操作，以提高串口通信的效率。
 
+## 功能特点：
+    1.发送和接收串口通信：支持分别为发送和接收数据创建独立线程。
+    2.串口配置：允许动态配置串口设置，包括波特率、数据位、停止位和校验位。
+    3.多线程支持：利用独立线程处理串口数据传输和接收，以提高效率和响应性。
+    4.用户界面控件：包含一个用户友好的界面，提供串口参数选择的下拉框、用于发送和接收消息的文本区域，以及用于打开/关闭串口的按钮。
+    5.错误处理：为各种串口操作提供实时错误报告。
+    6.简洁的界面：简单、直观的界面，方便用户处理数据输入/输出并轻松管理多个串口。
+## 工作原理：
+    1.串口设置：用户可以选择所需的串口，并配置串口设置，如波特率、数据位、停止位和校验位。
+    2.打开/关闭串口：独立的按钮允许用户打开和关闭发送和接收串口。打开串口后，将激活相应的线程进行数据的发送或接收。
+    3.发送数据：用户可以在发送文本框中输入消息，点击发送按钮通过串口传输数据。
+    4.接收数据：接收到的数据会自动显示在接收文本框中，用户可以实时监控通信过程。
+    5.清除数据：提供一个按钮用于清除发送和接收消息的文本区域。
+## 使用技术：
+    Qt 5/6：用于图形界面和多线程处理。
+    QSerialPort：用于串口通信。
+    C++：用于应用程序逻辑和线程处理。
+    QMutex：用于线程同步和数据保护。
+## 图片：
+![image](https://github.com/user-attachments/assets/fa2feef1-659e-4b63-b145-9ef6ecd14be2)
